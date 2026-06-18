@@ -1,148 +1,164 @@
-# Hi, I'm Jolapuram Jayavardan 👋
-### Embedded Software Engineer · Bluetooth Developer · ARM Cortex-M4 Specialist
+<div align="center">
 
-> Building reliable firmware from the ground up — bare-metal to RTOS, silicon to protocol stack.
+# Hi, I'm Jolapuram Jayavardan 👋
+### Embedded Software Engineer · Bluetooth Stack Developer · ARM Cortex-M4 Specialist
+
+**I build firmware and connectivity stacks that have to work — bare metal to RTOS, silicon to protocol.**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/YOUR_LINKEDIN_USERNAME)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:j.jayavardan.r@gmail.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://YOUR_PORTFOLIO_URL.com)
+[![Resume](https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logo=googledocs&logoColor=white)](https://YOUR_RESUME_LINK.com)
+
+</div>
 
 ---
 
 ## 🧑‍💻 About Me
 
-- 🎓 **B.Tech in Electronics & Communication Engineering** — CGPA 8.0/10 | RGMCET, Nandyal
-- 💼 **Bluetooth Developer Intern @ Harman International**, Bengaluru *(Jan 2026 – Present)*
-  - Working on Android Bluetooth stack: HFP, A2DP, MAP, PBAP profile implementation
-  - OTA capture, PTS (Profile Tuning Suite) testing & certification workflows
-- 🔩 Strong in **bare-metal ARM Cortex-M4** programming, custom linker scripts, startup files, and **FreeRTOS**
-- 📡 Hands-on with automotive communication protocols: **SPI, I2C, UART, CAN**
-- 🌱 Always exploring: Linux system programming, Android Bluetooth internals, and real-time embedded systems
+I'm an Embedded Software Engineer specializing in **bare-metal ARM programming, RTOS architecture, and Bluetooth protocol stacks**. Currently a **Bluetooth Developer Intern at Harman International**, where I work on Android's Bluetooth stack — implementing and certifying HFP, A2DP, MAP, and PBAP profiles for automotive infotainment systems.
+
+What sets my background apart: I don't just call embedded APIs — I've built a **custom UART bootloader from scratch** (flash erase, CRC verification, VTOR relocation) and a **bare-metal task scheduler with zero HAL/IDE dependency**, writing my own linker scripts, startup files, and manually manipulating Cortex-M4 stack frames. That's the kind of register-level fluency that's increasingly rare as more engineers stay in HAL/Arduino-land.
+
+- 🎓 B.Tech, Electronics & Communication Engineering — CGPA 8.0/10, RGMCET, Nandyal
+- 🔧 Comfortable across the stack: silicon registers → drivers → RTOS → application protocol
+- 📡 Production exposure to Bluetooth certification workflows (PTS testing, OTA capture)
+- 🎯 Targeting: **Embedded Software Engineer / Firmware Engineer / Bluetooth-Connectivity Developer** roles
+- 🌱 Currently deepening Linux kernel-level Bluetooth internals and real-time systems design
 
 ---
 
-## 🛠️ Technical Skills
+## 🛠️ Tech Stack
 
 **Languages**
-`Embedded C` `Embedded C++` `C++` `Java` `Python` `MicroPython` `Assembly` `Arduino`
+![C](https://img.shields.io/badge/Embedded_C-00599C?style=flat-square&logo=c&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Assembly](https://img.shields.io/badge/ARM_Assembly-444444?style=flat-square&logo=assemblyscript&logoColor=white)
 
-**Microcontrollers**
-`STM32F407VG` `STM32F103C8` `ARM7 LPC2129` `PIC16F877A` `ESP32` `8051` `Raspberry Pi 4` `TI LaunchPad F28p55xx`
+**Microcontrollers & Boards**
+![STM32](https://img.shields.io/badge/STM32F407VG-03234B?style=flat-square&logo=stmicroelectronics&logoColor=white)
+![ESP32](https://img.shields.io/badge/ESP32-E7352C?style=flat-square&logo=espressif&logoColor=white)
+![ARM7](https://img.shields.io/badge/ARM7_LPC2129-0091BD?style=flat-square)
+![PIC](https://img.shields.io/badge/PIC16F877A-CC0000?style=flat-square)
+![RaspberryPi](https://img.shields.io/badge/Raspberry_Pi_4-A22846?style=flat-square&logo=raspberry-pi&logoColor=white)
+
+**RTOS & Bare-Metal**
+![FreeRTOS](https://img.shields.io/badge/FreeRTOS-262626?style=flat-square)
+`Custom Bootloaders` `Linker Scripts` `Startup Code` `NVIC` `SysTick` `PendSV` `DMA` `Interrupts`
 
 **Protocols**
-`SPI` `I2C` `UART` `CAN` `HFP` `A2DP` `MAP` `PBAP` `OTA` `HTTP` `MQTT`
-
-**Concepts**
-`Bare-Metal Programming` `FreeRTOS` `RTX RTOS` `Custom Bootloader` `Linker Scripts` `Startup Files`
-`Interrupts` `Timers` `ADC` `DAC` `PWM` `NVIC` `SysTick` `PendSV` `DMA`
-
-**Tools & Build**
-`GCC ARM` `OpenOCD` `GDB` `Keil µVision` `STM32CubeIDE` `MPLAB X` `SEGGER SystemView`
-`ADB` `Logic Analyser` `Git / GitHub` `Proteus` `Cadence Virtuoso` `ESP-IDF (CLI)`
+`SPI` `I2C` `UART` `CAN` `HFP` `A2DP` `MAP` `PBAP` `OTA` `MQTT` `HTTP`
 
 **Platforms**
-`Linux / Unix System Programming` `Android Bluetooth Stack` `ROS (Basics)` `PCB Design` `Soldering`
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+![Android](https://img.shields.io/badge/Android_Bluetooth_Stack-3DDC84?style=flat-square&logo=android&logoColor=white)
+`ROS (Basics)` `PCB Design`
+
+**Tools & Debugging**
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
+`GCC ARM` `OpenOCD` `GDB` `Keil µVision` `STM32CubeIDE` `MPLAB X` `SEGGER SystemView` `ADB` `Logic Analyzer` `Cadence Virtuoso` `ESP-IDF`
 
 ---
 
-## 💼 Experience
+## 🚀 Featured Projects
 
-### 🔵 Bluetooth Developer Intern — Harman International, Bengaluru
-**Jan 2026 – Present**
-- Bluetooth stack development on Android — HFP, A2DP, MAP, and PBAP profile implementation
-- OTA capture, Bluetooth PTS testing & certification workflows
-- Feature development and debugging in Java using ADB (Android Debug Bridge)
+### 🔌 [Custom UART Bootloader — STM32F407VG](https://github.com/JJAYAVARDAN/REPO_LINK_HERE)
+Built a production-style bootloader with no vendor middleware.
+- Flash erase, memory write, and **CRC32 integrity verification** before application jump
+- Custom **VTOR relocation**, linker scripts, and startup code to separate bootloader/app memory regions
+- Companion **Python host tool** for firmware transfer and command handling over UART
+- **Why it matters:** demonstrates the exact mechanism (safe, verifiable firmware updates) used in real OTA/field-update systems
+- `Embedded C` `UART` `ARM Cortex-M4` `Python`
 
-### ⚙️ Embedded Software Trainee — Vector India, Bengaluru
-**Completed**
-- Interrupt-driven firmware and peripheral drivers for SPI, I2C, UART, CAN on ARM7 LPC2129
-- FreeRTOS task design, TCP/IP networking fundamentals, and Linux system programming
-- Strong grounding in memory management, interrupts, and peripheral interfacing
+### ⏱️ [Bare-Metal Task Scheduler — STM32F407VG](https://github.com/JJAYAVARDAN/REPO_LINK_HERE)
+A cooperative/round-robin task scheduler built entirely from the CLI — no HAL, no IDE.
+- Hand-written linker scripts and startup files for precise memory layout control
+- Manual **Cortex-M4 stack frame manipulation** via SysTick & PendSV for context switching
+- Debugged at the register and stack-frame level using **GDB + OpenOCD**
+- **Why it matters:** proves RTOS internals are understood, not just used
+- `GCC ARM` `OpenOCD` `GDB`
 
-### 🔧 ARM Cortex-M4 Bare Metal Programming — Argyan Tech
-**Completed**
-- Deep-dive into Cortex-M4 architecture: registers, NVIC, exceptions, AAPCS, startup code, linker scripts
-- Built a bare-metal task scheduler using SysTick & PendSV; debugged with GDB/OpenOCD
+### 🚗 [Real-Time Vehicle Data Acquisition System — FreeRTOS](https://github.com/JJAYAVARDAN/REPO_LINK_HERE)
+Multi-sensor vehicle monitoring system on ARM7 LPC2129.
+- FreeRTOS tasks coordinating concurrent **SPI, I2C, and UART** sensor reads
+- Task-level profiling and RTOS trace visualization with **SEGGER SystemView**
+- `ARM7 LPC2129` `FreeRTOS` `SEGGER SystemView`
 
-### 🖥️ PIC Microcontroller Course — Argyan Tech
-**Completed**
-- Embedded C development on PIC16F877A — timers, ADC, UART, GPIO via register-level programming in MPLAB X (XC8)
+### ➕ [32-bit Hybrid Ling/Ripple-Carry Adder — VLSI](https://github.com/JJAYAVARDAN/REPO_LINK_HERE)
+Custom adder architecture combining Ling and Ripple Carry logic for optimized speed/area trade-off, designed in Cadence Virtuoso.
+- `Cadence Virtuoso` `VLSI Design`
 
----
-
-## 🚀 Projects
-
-### 🔌 Custom Bootloader Development — STM32F407VG
-`Embedded C` `UART` `ARM Cortex-M4` | **2026**
-- UART-based custom bootloader with flash erase, memory write, CRC verification, and application jump
-- VTOR relocation, linker scripts, startup code, and flash memory mapping for bootloader/app separation
-- Python host utility for firmware transfer and bootloader command handling over UART
-
-### ⏱️ Bare-Metal Task Scheduler — STM32F407VG
-`GCC ARM CLI` `OpenOCD` `GDB` | **2026**
-- Built from scratch with no HAL/IDE — custom linker scripts and startup files for precise memory layout
-- Cooperative/round-robin scheduling via SysTick & manual Cortex-M4 stack frame manipulation
-- Flashed and debugged via CLI; live register & stack frame inspection with GDB + OpenOCD
-
-### 🚗 Data Acquisition System — Vehicle Monitoring (RTOS)
-`ARM7 LPC2129` `FreeRTOS` `SEGGER` | **Sep–Oct 2025**
-- Real-time vehicle monitoring with FreeRTOS tasks for SPI, I2C, UART multi-sensor data acquisition
-- SEGGER SystemView for real-time task profiling and RTOS trace visualization
-
-### ➕ 32-bit Hybrid Ling & Ripple Carry Adder
-`Cadence Virtuoso` | **Dec 2024–Mar 2025**
-- VLSI-designed 32-bit hybrid adder combining Ling and Ripple Carry logic for optimized speed and area
-
-### 🤖 Obstacle Detection & Line Following Robot
-`Arduino` `Ultrasonic` `IR` `C++` | **2023**
-- Autonomous robot integrating ultrasonic and IR sensors for obstacle avoidance and line following
-
-### 🧠 AI Text & Speech Generation Model
-`Python` `PyCharm` | **May–Jun 2024**
-- Python conversational AI model with integrated text and speech I/O; recognized by AIMERS Society
+> 📌 Repo links are placeholders — push each project to its own repo (not buried in a single course-projects folder) so each one is independently star-able, forkable, and indexable by GitHub search.
 
 ---
 
-## 📜 Certifications
+## 🔭 What I'm Working On
 
-| Certificate | Issuer |
-|---|---|
-| Embedded Systems | Eduskills & Microchip |
-| ARM Cortex, STM32 MCU1 & MCU2 | FastBit Embedded Brain Academy |
-| Cloud Computing | NPTEL (76%) |
-| Introduction to IoT | NPTEL (60%) |
-| Git & GitHub | GeeksforGeeks |
-| AI Model Development | AIMERS Society |
+- 📲 Shipping Bluetooth profile features (HFP/A2DP/MAP/PBAP) and running PTS certification cycles at Harman International
+- 🐧 Going deeper into Linux BlueZ internals to connect my embedded background to the Android Bluetooth stack I work in daily
+- 🧰 Migrating my project history out of a single repo into individually documented, pinned repositories (see recommendations below)
 
----
+## 📚 Currently Learning
 
-## 🏆 Achievements
-
-- 🥈 **2nd Place** — Circuit Debugging, Ripple 2K24
-- 🎖️ **Appreciation Award** — Chatbot Development, AIMERS Society
+- Linux kernel-level Bluetooth (BlueZ) architecture
+- Advanced RTOS scheduling and real-time systems design
+- Secure OTA update design (signed firmware, rollback protection)
 
 ---
 
 ## 📊 GitHub Stats
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9" alt="GitHub Stats" height="165"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_GITHUB_USERNAME&theme=dark&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff" alt="GitHub Streak" height="165"/>
-</p>
+<div align="center">
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&langs_count=8" alt="Top Languages" height="165"/>
-</p>
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=JJAYAVARDAN&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9)
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=JJAYAVARDAN&theme=dark&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=JJAYAVARDAN&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&langs_count=8)
+
+![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=JJAYAVARDAN&theme=react-dark&hide_border=true&bg_color=0d1117&color=58a6ff&line=58a6ff&point=c9d1d9)
+
+</div>
+
+> ⚠️ Note: stats widgets reflect *public commit activity*, which will look thin until projects are split into individual repos with real commit history (see below). This is normal for embedded portfolios and easy to fix.
+
+---
+
+## 💼 Experience Snapshot
+
+| Role | Company | Focus |
+|---|---|---|
+| Bluetooth Developer Intern | Harman International | Android BT stack — HFP, A2DP, MAP, PBAP; PTS certification |
+| Embedded Software Trainee | Vector India | Interrupt-driven drivers (SPI/I2C/UART/CAN), FreeRTOS, Linux |
+| ARM Cortex-M4 Bare-Metal Program | Argyan Tech | Cortex-M4 architecture, custom scheduler, AAPCS |
+| PIC Microcontroller Course | Argyan Tech | Register-level Embedded C on PIC16F877A |
+
+## 📜 Certifications
+
+`Embedded Systems — Eduskills & Microchip` · `ARM Cortex / STM32 MCU1 & MCU2 — FastBit Embedded Brain Academy` · `Cloud Computing — NPTEL` · `Introduction to IoT — NPTEL` · `Git & GitHub — GeeksforGeeks`
+
+## 🏆 Achievements
+
+🥈 2nd Place, Circuit Debugging — Ripple 2K24 &nbsp;|&nbsp; 🎖️ Appreciation Award, Chatbot Development — AIMERS Society
 
 ---
 
 ## 📬 Contact
 
+<div align="center">
+
 | | |
 |---|---|
-| 📧 Email | [j.jayavardan.r@gmail.com](mailto:j.jayavardan.r@gmail.com) |
-| 🔗 LinkedIn | [linkedin.com/in/YOUR_LINKEDIN_USERNAME](https://linkedin.com/in/YOUR_LINKEDIN_USERNAME) |
-| 📞 Phone | +91 93818 36829 |
-| 📍 Location | Bengaluru, Karnataka, India |
+| 📧 **Email** | j.jayavardan.r@gmail.com |
+| 🔗 **LinkedIn** | [linkedin.com/in/YOUR_LINKEDIN_USERNAME](https://linkedin.com/in/YOUR_LINKEDIN_USERNAME) |
+| 🌐 **Portfolio** | [YOUR_PORTFOLIO_URL.com](https://YOUR_PORTFOLIO_URL.com) |
+| 📄 **Resume** | [View / Download](https://YOUR_RESUME_LINK.com) |
+| 📍 **Location** | Bengaluru, Karnataka, India |
 
----
+**Open to: Embedded Software Engineer · Firmware Developer · Bluetooth/Connectivity Engineer roles**
 
-<p align="center">
-  <i>Open to Embedded Software Engineer / Firmware Developer roles — let's build something real.</i>
-</p>
+</div>
+
+</div>
