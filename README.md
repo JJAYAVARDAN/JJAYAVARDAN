@@ -152,9 +152,9 @@ Custom adder architecture combining Ling and Ripple Carry logic for optimized sp
 | | |
 |---|---|
 | 📧 **Email** | j.jayavardan.r@gmail.com |
-| 🔗 **LinkedIn** | [linkedin.com/in/YOUR_LINKEDIN_USERNAME](https://linkedin.com/in/YOUR_LINKEDIN_USERNAME) |
-| 🌐 **Portfolio** | [YOUR_PORTFOLIO_URL.com](https://YOUR_PORTFOLIO_URL.com) |
-| 📄 **Resume** | [View / Download](https://YOUR_RESUME_LINK.com) |
+| 🔗 **LinkedIn** | [linkedin.com/in/YOUR_LINKEDIN_USERNAME](https://www.linkedin.com/in/jayavardan-j-120331218/) |
+| 🌐 **Portfolio** | [YOUR_PORTFOLIO_URL.com](https://jjayavardan.github.io/JJAYAVARDAN/) |
+| 📄 **Resume** | [View / Download](https://github.com/JJAYAVARDAN/JJAYAVARDAN/blob/main/resume.pdf) |
 | 📍 **Location** | Bengaluru, Karnataka, India |
 
 **Open to: Embedded Software Engineer · Firmware Developer · Bluetooth/Connectivity Engineer roles**
