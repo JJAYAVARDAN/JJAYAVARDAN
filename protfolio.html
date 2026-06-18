@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jolapuram Jayavardan — Embedded Software Engineer</title>
+  <meta name="description" content="Embedded Software Engineer specializing in ARM Cortex-M4, Bluetooth protocol stacks, FreeRTOS, and bare-metal firmware. Currently at Harman International.">
+  <meta property="og:title" content="Jolapuram Jayavardan — Embedded Software Engineer">
+  <meta property="og:description" content="Firmware engineer specializing in ARM Cortex-M4, Bluetooth stacks, and real-time systems.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg:      #0a0e14;
+      --bg2:     #0f1520;
+      --bg3:     #141d2b;
+      --bg4:     #1a2535;
+      --accent:  #00d4ff;
+      --accent2: #0099cc;
+      --green:   #39d353;
+      --text:    #e6edf3;
+      --text2:   #8b949e;
+      --text3:   #6e7681;
+      --border:  #21262d;
+      --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+      --font-sans: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { color: var(--text); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,14,20,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px;
+    }
+    .nav-logo { font-family: var(--font-mono); font-size: 13px; color: var(--accent); letter-spacing: 0.05em; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { font-size: 13px; color: var(--text2); font-family: var(--font-mono); }
+    .nav-links a:hover { color: var(--accent); text-decoration: none; }
+    .nav-cta {
+      font-family: var(--font-mono); font-size: 12px; padding: 6px 14px;
+      border: 1px solid var(--accent); border-radius: 4px; color: var(--accent);
+    }
+    .nav-cta:hover { background: rgba(0,212,255,0.08); text-decoration: none; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 90vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 2rem 2rem;
+      max-width: 900px; margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-mono); font-size: 13px; color: var(--accent);
+      letter-spacing: 0.1em; margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: inline-block; width: 32px; height: 1px; background: var(--accent);
+    }
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1rem;
+    }
+    h1 span { color: var(--accent); }
+    .hero-sub {
+      font-size: 1.1rem; color: var(--text2); max-width: 600px;
+      margin-bottom: 2rem; line-height: 1.7;
+    }
+    canvas#osc {
+      display: block; width: 100%; height: 80px;
+      margin: 1.5rem 0; opacity: 0.75;
+    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+    .tag {
+      font-family: var(--font-mono); font-size: 11px; padding: 4px 10px;
+      border: 1px solid var(--border); border-radius: 4px;
+      color: var(--text2); background: var(--bg3);
+    }
+    .tag.hi { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,0.06); }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 10px 22px; border-radius: 6px; font-size: 14px; font-weight: 500;
+      cursor: pointer; border: none; transition: all 0.15s; font-family: var(--font-sans);
+    }
+    .btn-primary { background: var(--accent); color: #0a0e14; }
+    .btn-primary:hover { background: #33ddff; text-decoration: none; color: #0a0e14; }
+    .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+    /* ── SECTIONS ── */
+    section { max-width: 900px; margin: 0 auto; padding: 5rem 2rem; }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0 2rem; }
+    .section-label {
+      font-family: var(--font-mono); font-size: 12px; color: var(--accent);
+      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;
+    }
+    h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 2rem; letter-spacing: -0.02em; }
+
+    /* ── ABOUT ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .about-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 8px; padding: 1.5rem;
+    }
+    .about-card h3 {
+      font-size: 13px; color: var(--accent); font-family: var(--font-mono);
+      margin-bottom: 0.75rem; letter-spacing: 0.05em;
+    }
+    .about-card p, .about-card li { font-size: 14px; color: var(--text2); line-height: 1.7; }
+    .about-card ul { padding-left: 1.2rem; }
+    .about-card li { margin-bottom: 0.3rem; }
+
+    /* ── EXPERIENCE ── */
+    .exp-item { display: grid; grid-template-columns: 130px 1fr; gap: 2rem; margin-bottom: 2.5rem; position: relative; }
+    .exp-date { font-family: var(--font-mono); font-size: 12px; color: var(--text3); padding-top: 3px; text-align: right; line-height: 1.5; }
+    .exp-connector { display: flex; justify-content: center; padding-top: 6px; }
+    .exp-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
+    .exp-content h3 { font-size: 16px; font-weight: 600; margin-bottom: 3px; }
+    .exp-content .company {
+      font-family: var(--font-mono); font-size: 13px; color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .exp-content ul { padding-left: 1.2rem; }
+    .exp-content li { font-size: 14px; color: var(--text2); margin-bottom: 0.3rem; }
+
+    /* ── PROJECTS ── */
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .proj-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 8px; padding: 1.5rem; transition: border-color 0.15s;
+    }
+    .proj-card:hover { border-color: rgba(0,212,255,0.4); }
+    .proj-card.featured { border-color: rgba(0,212,255,0.2); grid-column: span 2; }
+    .proj-num { font-family: var(--font-mono); font-size: 11px; color: var(--text3); margin-bottom: 0.5rem; }
+    .proj-title { font-size: 16px; font-weight: 600; margin-bottom: 0.6rem; }
+    .proj-desc { font-size: 13px; color: var(--text2); line-height: 1.6; margin-bottom: 0.75rem; }
+    .proj-bullets { padding-left: 1.2rem; margin-bottom: 1rem; }
+    .proj-bullets li { font-size: 13px; color: var(--text2); margin-bottom: 0.3rem; }
+    .proj-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .proj-chip {
+      font-family: var(--font-mono); font-size: 11px; padding: 3px 8px;
+      border-radius: 3px; background: var(--bg); border: 1px solid var(--border); color: var(--text3);
+    }
+    .proj-link {
+      display: inline-block; margin-top: 0.75rem; font-family: var(--font-mono);
+      font-size: 12px; color: var(--accent); border: 1px solid rgba(0,212,255,0.3);
+      padding: 4px 12px; border-radius: 4px;
+    }
+    .proj-link:hover { background: rgba(0,212,255,0.08); text-decoration: none; }
+
+    /* ── STACK ── */
+    .stack-group { margin-bottom: 1.75rem; }
+    .stack-label {
+      font-family: var(--font-mono); font-size: 12px; color: var(--text3);
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .badge {
+      font-family: var(--font-mono); font-size: 12px; padding: 5px 12px;
+      border-radius: 4px; background: var(--bg4); border: 1px solid var(--border); color: var(--text2);
+    }
+    .badge.hi { border-color: rgba(0,212,255,0.35); color: var(--accent); background: rgba(0,212,255,0.05); }
+
+    /* ── CERTS ── */
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem; }
+    .cert-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 6px; padding: 1rem;
+    }
+    .cert-card .issuer { font-family: var(--font-mono); font-size: 11px; color: var(--accent); margin-bottom: 0.3rem; }
+    .cert-card .name { font-size: 13px; color: var(--text2); }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+    .contact-item {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.75rem 0; border-bottom: 1px solid var(--border);
+    }
+    .ci-label { font-family: var(--font-mono); font-size: 12px; color: var(--text3); width: 72px; flex-shrink: 0; }
+    .contact-item a, .contact-item span { font-size: 14px; color: var(--text); }
+    .contact-item a:hover { color: var(--accent); }
+    .contact-note {
+      font-size: 14px; color: var(--text2);
+      background: var(--bg3); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      padding: 1.25rem 1.5rem; line-height: 1.7;
+    }
+    .contact-note strong { color: var(--text); }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center; padding: 2.5rem 2rem;
+      font-family: var(--font-mono); font-size: 12px; color: var(--text3);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 0 1rem; }
+      .nav-links { display: none; }
+      .about-grid, .projects-grid, .contact-grid { grid-template-columns: 1fr; }
+      .proj-card.featured { grid-column: span 1; }
+      .exp-item { grid-template-columns: 1fr; }
+      .exp-date { text-align: left; }
+      section { padding: 3rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">JJ.firmware</span>
+  <div class="nav-links">
+    <a href="#about">about</a>
+    <a href="#experience">experience</a>
+    <a href="#projects">projects</a>
+    <a href="#stack">stack</a>
+    <a href="#contact">contact</a>
+  </div>
+  <a class="nav-cta" href="mailto:j.jayavardan.r@gmail.com">hire me</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-eyebrow">Embedded Software Engineer</div>
+  <h1>Jolapuram<br><span>Jayavardan</span></h1>
+  <p class="hero-sub">
+    I build firmware and connectivity stacks that have to work — bare metal to RTOS, silicon to Bluetooth protocol.
+    Currently shipping Bluetooth profiles at Harman International, Bengaluru.
+  </p>
+  <canvas id="osc"></canvas>
+  <div class="hero-tags">
+    <span class="tag hi">ARM Cortex-M4</span>
+    <span class="tag hi">Bluetooth Stack (HFP · A2DP · MAP · PBAP)</span>
+    <span class="tag hi">FreeRTOS</span>
+    <span class="tag">Custom Bootloaders</span>
+    <span class="tag">Bare-Metal Scheduling</span>
+    <span class="tag">SPI · I2C · UART · CAN</span>
+    <span class="tag">STM32 · ESP32 · ARM7</span>
+    <span class="tag">Bengaluru, India</span>
+  </div>
+  <div class="hero-ctas">
+    <a class="btn btn-primary" href="mailto:j.jayavardan.r@gmail.com">Get in touch</a>
+    <a class="btn btn-outline" href="https://github.com/JJAYAVARDAN" target="_blank">GitHub ↗</a>
+    <a class="btn btn-outline" href="https://linkedin.com/in/jayavardan-j-120331218" target="_blank">LinkedIn ↗</a>
+    <!-- Replace the href below with your actual resume URL -->
+    <a class="btn btn-outline" href="https://raw.githubusercontent.com/JJAYAVARDAN/JJAYAVARDAN/main/resume.pdf" target="_blank">Resume ↗</a>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">// 01 — about</div>
+  <h2>Who I Am</h2>
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>Background</h3>
+      <p>B.Tech in Electronics & Communication Engineering (CGPA 8.0/10, RGMCET Nandyal). I work at the register level — not just calling HAL APIs, but writing custom linker scripts, startup files, and bare-metal schedulers from scratch. That depth is increasingly rare, and it's what I'm known for.</p>
+    </div>
+    <div class="about-card">
+      <h3>What I'm doing now</h3>
+      <ul>
+        <li>Bluetooth Developer Intern at <strong>Harman International</strong>, Bengaluru</li>
+        <li>Implementing HFP, A2DP, MAP, PBAP on Android Bluetooth stack</li>
+        <li>Running PTS certification cycles and OTA capture workflows</li>
+        <li>Deepening Linux BlueZ internals alongside day-to-day work</li>
+      </ul>
+    </div>
+    <div class="about-card">
+      <h3>Core strengths</h3>
+      <ul>
+        <li>Cortex-M4 architecture — registers, NVIC, AAPCS, exception model</li>
+        <li>Real-time scheduling — SysTick, PendSV, manual context switching</li>
+        <li>Protocol implementation: Bluetooth profiles, CAN, SPI, UART</li>
+        <li>Register-level debug: GDB + OpenOCD, SEGGER SystemView</li>
+      </ul>
+    </div>
+    <div class="about-card">
+      <h3>Target roles</h3>
+      <ul>
+        <li>Embedded Software Engineer</li>
+        <li>Firmware Developer</li>
+        <li>Bluetooth / Connectivity Engineer</li>
+        <li>IoT Systems Engineer</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">// 02 — experience</div>
+  <h2>Work & Training</h2>
+
+  <div class="exp-item">
+    <div class="exp-date">Jan 2026 –<br>Present</div>
+    <div class="exp-content">
+      <h3>Bluetooth Developer Intern</h3>
+      <div class="company">Harman International · Bengaluru</div>
+      <ul>
+        <li>Android Bluetooth stack development — HFP, A2DP, MAP, PBAP profile implementation</li>
+        <li>OTA capture, PTS (Profile Tuning Suite) testing and certification workflows</li>
+        <li>Feature development and debugging in Java using ADB (Android Debug Bridge)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-date">Completed</div>
+    <div class="exp-content">
+      <h3>Embedded Software Trainee</h3>
+      <div class="company">Vector India · Bengaluru</div>
+      <ul>
+        <li>Interrupt-driven firmware and peripheral drivers for SPI, I2C, UART, CAN on ARM7 LPC2129</li>
+        <li>FreeRTOS task design, TCP/IP networking fundamentals, Linux system programming</li>
+        <li>Strong grounding in memory management, interrupt handlers, and peripheral interfacing</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-date">Completed</div>
+    <div class="exp-content">
+      <h3>ARM Cortex-M4 Bare-Metal Program</h3>
+      <div class="company">Argyan Tech</div>
+      <ul>
+        <li>Cortex-M4 architecture deep-dive: registers, NVIC, exceptions, AAPCS, startup code</li>
+        <li>Built bare-metal task scheduler using SysTick & PendSV; debugged with GDB/OpenOCD</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-date">Completed</div>
+    <div class="exp-content">
+      <h3>PIC Microcontroller Course</h3>
+      <div class="company">Argyan Tech</div>
+      <ul>
+        <li>Embedded C on PIC16F877A — timers, ADC, UART, GPIO via register-level programming in MPLAB X (XC8)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">// 03 — projects</div>
+  <h2>Featured Work</h2>
+  <div class="projects-grid">
+
+    <div class="proj-card featured">
+      <div class="proj-num">01 · Featured</div>
+      <div class="proj-title">🔌 Custom UART Bootloader — STM32F407VG</div>
+      <p class="proj-desc">A production-style bootloader built without vendor middleware. This is the exact mechanism behind safe OTA and field-update systems in production embedded products.</p>
+      <ul class="proj-bullets">
+        <li>Flash erase, memory write, and CRC32 integrity verification before application jump</li>
+        <li>Custom VTOR relocation, linker scripts, and startup code to isolate bootloader/app memory</li>
+        <li>Python host utility for firmware transfer and bootloader command protocol over UART</li>
+      </ul>
+      <div class="proj-tech">
+        <span class="proj-chip">Embedded C</span>
+        <span class="proj-chip">UART</span>
+        <span class="proj-chip">ARM Cortex-M4</span>
+        <span class="proj-chip">Python</span>
+        <span class="proj-chip">GDB</span>
+        <span class="proj-chip">OpenOCD</span>
+      </div>
+      <!-- Replace # with your actual GitHub repo URL -->
+      <a class="proj-link" href="https://github.com/JJAYAVARDAN" target="_blank">View on GitHub ↗</a>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-num">02</div>
+      <div class="proj-title">⏱️ Bare-Metal Task Scheduler</div>
+      <p class="proj-desc">A cooperative/round-robin task scheduler on STM32F407VG — zero HAL, zero IDE. Built entirely from the command line to prove the internals, not just use them.</p>
+      <ul class="proj-bullets">
+        <li>Hand-written linker scripts and startup files for precise memory layout</li>
+        <li>Manual Cortex-M4 stack frame manipulation via SysTick & PendSV</li>
+        <li>Register & stack-frame debug with GDB + OpenOCD</li>
+      </ul>
+      <div class="proj-tech">
+        <span class="proj-chip">GCC ARM CLI</span>
+        <span class="proj-chip">OpenOCD</span>
+        <span class="proj-chip">GDB</span>
+      </div>
+      <a class="proj-link" href="https://github.com/JJAYAVARDAN" target="_blank">View on GitHub ↗</a>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-num">03</div>
+      <div class="proj-title">🚗 Real-Time Vehicle DAQ — FreeRTOS</div>
+      <p class="proj-desc">Multi-sensor vehicle monitoring with concurrent SPI, I2C, and UART data acquisition on ARM7 LPC2129.</p>
+      <ul class="proj-bullets">
+        <li>FreeRTOS tasks coordinating across multiple bus types simultaneously</li>
+        <li>Task profiling and RTOS trace visualization with SEGGER SystemView</li>
+      </ul>
+      <div class="proj-tech">
+        <span class="proj-chip">ARM7 LPC2129</span>
+        <span class="proj-chip">FreeRTOS</span>
+        <span class="proj-chip">SEGGER SystemView</span>
+      </div>
+      <a class="proj-link" href="https://github.com/JJAYAVARDAN" target="_blank">View on GitHub ↗</a>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-num">04</div>
+      <div class="proj-title">➕ 32-bit Hybrid Adder — VLSI</div>
+      <p class="proj-desc">Combined Ling and Ripple Carry adder architecture for optimized speed/area trade-off, designed in Cadence Virtuoso.</p>
+      <div class="proj-tech">
+        <span class="proj-chip">Cadence Virtuoso</span>
+        <span class="proj-chip">VLSI Design</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- STACK -->
+<section id="stack">
+  <div class="section-label">// 04 — tech stack</div>
+  <h2>Skills & Tools</h2>
+
+  <div class="stack-group">
+    <div class="stack-label">Languages</div>
+    <div class="badges">
+      <span class="badge hi">Embedded C</span>
+      <span class="badge hi">Embedded C++</span>
+      <span class="badge">Java</span>
+      <span class="badge">Python</span>
+      <span class="badge">ARM Assembly</span>
+      <span class="badge">MicroPython</span>
+      <span class="badge">Arduino</span>
+    </div>
+  </div>
+
+  <div class="stack-group">
+    <div class="stack-label">Microcontrollers & Boards</div>
+    <div class="badges">
+      <span class="badge hi">STM32F407VG</span>
+      <span class="badge hi">STM32F103C8</span>
+      <span class="badge hi">ARM7 LPC2129</span>
+      <span class="badge">ESP32</span>
+      <span class="badge">PIC16F877A</span>
+      <span class="badge">Raspberry Pi 4</span>
+      <span class="badge">TI LaunchPad F28p55xx</span>
+      <span class="badge">8051</span>
+    </div>
+  </div>
+
+  <div class="stack-group">
+    <div class="stack-label">RTOS & Bare-Metal Concepts</div>
+    <div class="badges">
+      <span class="badge hi">FreeRTOS</span>
+      <span class="badge">RTX RTOS</span>
+      <span class="badge">Custom Bootloaders</span>
+      <span class="badge">Linker Scripts</span>
+      <span class="badge">Startup Code</span>
+      <span class="badge">NVIC</span>
+      <span class="badge">SysTick</span>
+      <span class="badge">PendSV</span>
+      <span class="badge">DMA</span>
+      <span class="badge">ADC · DAC · PWM</span>
+      <span class="badge">Interrupts & Timers</span>
+    </div>
+  </div>
+
+  <div class="stack-group">
+    <div class="stack-label">Protocols</div>
+    <div class="badges">
+      <span class="badge hi">HFP</span>
+      <span class="badge hi">A2DP</span>
+      <span class="badge hi">MAP</span>
+      <span class="badge hi">PBAP</span>
+      <span class="badge">SPI</span>
+      <span class="badge">I2C</span>
+      <span class="badge">UART</span>
+      <span class="badge">CAN</span>
+      <span class="badge">OTA</span>
+      <span class="badge">MQTT</span>
+      <span class="badge">HTTP</span>
+    </div>
+  </div>
+
+  <div class="stack-group">
+    <div class="stack-label">Debug & Toolchain</div>
+    <div class="badges">
+      <span class="badge hi">GDB</span>
+      <span class="badge hi">OpenOCD</span>
+      <span class="badge">GCC ARM</span>
+      <span class="badge">Keil µVision</span>
+      <span class="badge">STM32CubeIDE</span>
+      <span class="badge">MPLAB X (XC8)</span>
+      <span class="badge">SEGGER SystemView</span>
+      <span class="badge">ADB</span>
+      <span class="badge">Logic Analyzer</span>
+      <span class="badge">Proteus</span>
+      <span class="badge">ESP-IDF CLI</span>
+    </div>
+  </div>
+
+  <div class="stack-group">
+    <div class="stack-label">Platforms & Other</div>
+    <div class="badges">
+      <span class="badge hi">Android Bluetooth Stack</span>
+      <span class="badge">Linux / Unix System Programming</span>
+      <span class="badge">BlueZ (learning)</span>
+      <span class="badge">Cadence Virtuoso</span>
+      <span class="badge">PCB Design</span>
+      <span class="badge">ROS (basics)</span>
+      <span class="badge">Git · GitHub</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <div class="section-label">// 05 — certifications</div>
+  <h2>Credentials</h2>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="issuer">Eduskills & Microchip</div>
+      <div class="name">Embedded Systems</div>
+    </div>
+    <div class="cert-card">
+      <div class="issuer">FastBit Embedded Brain Academy</div>
+      <div class="name">ARM Cortex-M, STM32 MCU1 & MCU2</div>
+    </div>
+    <div class="cert-card">
+      <div class="issuer">NPTEL · 76%</div>
+      <div class="name">Cloud Computing</div>
+    </div>
+    <div class="cert-card">
+      <div class="issuer">NPTEL · 60%</div>
+      <div class="name">Introduction to IoT</div>
+    </div>
+    <div class="cert-card">
+      <div class="issuer">GeeksforGeeks</div>
+      <div class="name">Git & GitHub</div>
+    </div>
+    <div class="cert-card">
+      <div class="issuer">AIMERS Society</div>
+      <div class="name">AI Model Development</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 2rem;">
+    <div class="section-label" style="margin-bottom: 0.75rem;">// achievements</div>
+    <div class="badges">
+      <span class="badge hi">🥈 2nd Place — Circuit Debugging, Ripple 2K24</span>
+      <span class="badge">🎖️ Appreciation Award — Chatbot Development, AIMERS Society</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">// 06 — contact</div>
+  <h2>Get in Touch</h2>
+  <div class="contact-grid">
+    <div>
+      <div class="contact-item">
+        <span class="ci-label">email</span>
+        <a href="mailto:j.jayavardan.r@gmail.com">j.jayavardan.r@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="ci-label">linkedin</span>
+        <a href="https://linkedin.com/in/jayavardan-j-120331218" target="_blank">jayavardan-j-120331218 ↗</a>
+      </div>
+      <div class="contact-item">
+        <span class="ci-label">github</span>
+        <a href="https://github.com/JJAYAVARDAN" target="_blank">github.com/JJAYAVARDAN ↗</a>
+      </div>
+      <div class="contact-item">
+        <span class="ci-label">phone</span>
+        <span>+91 93818 36829</span>
+      </div>
+      <div class="contact-item">
+        <span class="ci-label">location</span>
+        <span>Bengaluru, Karnataka, India</span>
+      </div>
+    </div>
+    <div class="contact-note">
+      Open to <strong>Embedded Software Engineer</strong>, <strong>Firmware Developer</strong>, and <strong>Bluetooth / Connectivity Engineer</strong> roles — full-time or internship extension.<br><br>
+      I respond to all serious enquiries within 24 hours.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Jolapuram Jayavardan · Bengaluru, India · Built with HTML — no frameworks needed.</span>
+</footer>
+
+<!-- Oscilloscope waveform animation -->
+<script>
+  const canvas = document.getElementById('osc');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let t = 0;
+    let animId;
+    function resize() {
+      canvas.width  = canvas.offsetWidth  * window.devicePixelRatio;
+      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function draw() {
+      const w = canvas.offsetWidth;
+      const h = canvas.offsetHeight;
+      ctx.clearRect(0, 0, w, h);
+
+      // Grid lines
+      ctx.strokeStyle = 'rgba(0,212,255,0.12)';
+      ctx.lineWidth = 0.5;
+      for (let i = 0; i < 5; i++) {
+        const y = (h / 4) * i + h * 0.05;
+        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+      }
+      for (let i = 0; i < 9; i++) {
+        const x = (w / 8) * i;
+        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
+      }
+
+      // Main waveform (cyan)
+      ctx.strokeStyle = '#00d4ff';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      for (let x = 0; x <= w; x++) {
+        const phase = (x / w) * Math.PI * 6 + t;
+        const v = 0.28 * Math.sin(phase)
+                + 0.12 * Math.sin(phase * 2.1 + 0.5)
+                + 0.06 * Math.sin(phase * 4.3 - 0.8);
+        const py = h * 0.5 - v * h * 0.42;
+        x === 0 ? ctx.moveTo(x, py) : ctx.lineTo(x, py);
+      }
+      ctx.stroke();
+
+      // Secondary signal (green) — simulates a digital trigger
+      ctx.strokeStyle = 'rgba(57,211,83,0.55)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      let lastHigh = false;
+      for (let x = 0; x <= w; x++) {
+        const phase = (x / w) * Math.PI * 3 + t * 0.4;
+        const isHigh = Math.sin(phase) > 0;
+        const py = isHigh ? h * 0.2 : h * 0.38;
+        if (x === 0) { ctx.moveTo(x, py); lastHigh = isHigh; }
+        else if (isHigh !== lastHigh) { ctx.lineTo(x, lastHigh ? h * 0.2 : h * 0.38); ctx.lineTo(x, py); lastHigh = isHigh; }
+        else { ctx.lineTo(x, py); }
+      }
+      ctx.stroke();
+
+      if (!prefersReducedMotion) {
+        t += 0.018;
+        animId = requestAnimationFrame(draw);
+      }
+    }
+
+    draw();
+
+    // Pause when tab is hidden (battery friendly)
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) cancelAnimationFrame(animId);
+      else if (!prefersReducedMotion) draw();
+    });
+  }
+</script>
+
+</body>
+</html>
