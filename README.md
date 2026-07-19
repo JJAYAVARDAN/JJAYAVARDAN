@@ -18,7 +18,7 @@
 
 I'm an Embedded Software Engineer specializing in **bare-metal ARM programming, RTOS architecture, and Bluetooth protocol stacks**. Currently a **Bluetooth Developer Intern at Harman International**, where I work on Android's Bluetooth stack — implementing and certifying HFP, A2DP, MAP, and PBAP profiles for automotive infotainment systems.
 
-What sets my background apart: I don't just call embedded APIs — I've built a **custom UART bootloader from scratch** (flash erase, CRC verification, VTOR relocation) and a **bare-metal task scheduler with zero HAL/IDE dependency**, writing my own linker scripts, startup files, and manually manipulating Cortex-M4 stack frames. That's the kind of register-level fluency that's increasingly rare as more engineers stay in HAL/Arduino-land.
+What sets my background apart: I don't just call embedded APIs — I've built a **register-level C++ peripheral driver library from scratch** (GPIO, RCC, EXTI, NVIC, SysTick, USART, no HAL/LL), a **custom UART bootloader** (flash erase, CRC verification, VTOR relocation), and a **bare-metal task scheduler with zero HAL/IDE dependency**, writing my own linker scripts, startup files, and manually manipulating Cortex-M4 stack frames. That's the kind of register-level fluency that's increasingly rare as more engineers stay in HAL/Arduino-land.
 
 - 🎓 B.Tech, Electronics & Communication Engineering — CGPA 8.0/10, RGMCET, Nandyal
 - 🔧 Comfortable across the stack: silicon registers → drivers → RTOS → application protocol
@@ -65,6 +65,15 @@ What sets my background apart: I don't just call embedded APIs — I've built a 
 
 ## 🚀 Featured Projects
 
+### 🧩 [STM32F407 Bare-Metal C++ Driver Library](https://github.com/JJAYAVARDAN/stm32f407-baremetal-cpp-drivers)
+A from-scratch, register-level peripheral driver library for the STM32F407VG Discovery board — no HAL, no LL.
+- Six drivers built directly against the reference manual: **GPIO, RCC, EXTI, NVIC, SysTick, USART**
+- Clean object-oriented C++ API — GPIO owns an RCC instance, EXTI takes port+pin, static NVIC methods — direct register struct access underneath
+- Documented with **PlantUML class and architecture diagrams**, plus per-peripheral theory and register breakdowns
+- Example applications for each driver (LED blink, button + EXTI interrupt, USART loopback)
+- **Why it matters:** shows the same register-level fluency as the bootloader/scheduler below, applied to a reusable driver layer instead of a one-off program
+- `Embedded C++` `STM32F407` `Register Programming` `PlantUML`
+
 ### 🔌 [Custom UART Bootloader — STM32F407VG](https://github.com/JJAYAVARDAN/REPO_LINK_HERE)
 Built a production-style bootloader with no vendor middleware.
 - Flash erase, memory write, and **CRC32 integrity verification** before application jump
@@ -91,13 +100,14 @@ Multi-sensor vehicle monitoring system on ARM7 LPC2129.
 Custom adder architecture combining Ling and Ripple Carry logic for optimized speed/area trade-off, designed in Cadence Virtuoso.
 - `Cadence Virtuoso` `VLSI Design`
 
-> 📌 Repo links are placeholders — push each project to its own repo (not buried in a single course-projects folder) so each one is independently star-able, forkable, and indexable by GitHub search.
+> 📌 Remaining repo links are placeholders — push each project to its own repo (not buried in a single course-projects folder) so each one is independently star-able, forkable, and indexable by GitHub search.
 
 ---
 
 ## 🔭 What I'm Working On
 
 - 📲 Shipping Bluetooth profile features (HFP/A2DP/MAP/PBAP) and running PTS certification cycles at Harman International
+- 🧩 Extending the STM32F407 driver library with SPI, I2C, and CAN drivers
 - 🐧 Going deeper into Linux BlueZ internals to connect my embedded background to the Android Bluetooth stack I work in daily
 - 🧰 Migrating my project history out of a single repo into individually documented, pinned repositories (see recommendations below)
 
@@ -158,7 +168,5 @@ Custom adder architecture combining Ling and Ripple Carry logic for optimized sp
 | 📍 **Location** | Bengaluru, Karnataka, India |
 
 **Open to: Embedded Software Engineer · Firmware Developer · Bluetooth/Connectivity Engineer roles**
-
-</div>
 
 </div>
