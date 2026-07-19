@@ -254,6 +254,7 @@
     <span class="tag hi">ARM Cortex-M4</span>
     <span class="tag hi">Bluetooth Stack (HFP · A2DP · MAP · PBAP)</span>
     <span class="tag hi">FreeRTOS</span>
+    <span class="tag">Register-Level C++ Drivers</span>
     <span class="tag">Custom Bootloaders</span>
     <span class="tag">Bare-Metal Scheduling</span>
     <span class="tag">SPI · I2C · UART · CAN</span>
@@ -278,7 +279,7 @@
   <div class="about-grid">
     <div class="about-card">
       <h3>Background</h3>
-      <p>B.Tech in Electronics & Communication Engineering (CGPA 8.0/10, RGMCET Nandyal). I work at the register level — not just calling HAL APIs, but writing custom linker scripts, startup files, and bare-metal schedulers from scratch. That depth is increasingly rare, and it's what I'm known for.</p>
+      <p>B.Tech in Electronics & Communication Engineering (CGPA 8.0/10, RGMCET Nandyal). I work at the register level — not just calling HAL APIs, but writing my own peripheral drivers, linker scripts, startup files, and bare-metal schedulers from scratch. That depth is increasingly rare, and it's what I'm known for.</p>
     </div>
     <div class="about-card">
       <h3>What I'm doing now</h3>
@@ -377,6 +378,26 @@
 
     <div class="proj-card featured">
       <div class="proj-num">01 · Featured</div>
+      <div class="proj-title">🧩 STM32F407 Bare-Metal C++ Driver Library</div>
+      <p class="proj-desc">A from-scratch, register-level peripheral driver library for the STM32F407VG Discovery board — no HAL, no LL. Six drivers built directly against the reference manual, wrapped in a clean object-oriented C++ API.</p>
+      <ul class="proj-bullets">
+        <li>GPIO, RCC, EXTI, NVIC, SysTick, and USART drivers — direct register struct access underneath</li>
+        <li>Object-oriented design: GPIO owns an RCC instance, EXTI takes port + pin, static NVIC methods</li>
+        <li>PlantUML class and architecture diagrams plus per-peripheral theory and register breakdowns</li>
+        <li>Working example apps for each driver — LED blink, button + EXTI interrupt, USART loopback</li>
+      </ul>
+      <div class="proj-tech">
+        <span class="proj-chip">Embedded C++</span>
+        <span class="proj-chip">STM32F407VG</span>
+        <span class="proj-chip">Register Programming</span>
+        <span class="proj-chip">PlantUML</span>
+        <span class="proj-chip">STM32CubeIDE</span>
+      </div>
+      <a class="proj-link" href="https://github.com/JJAYAVARDAN/stm32f407-baremetal-cpp-drivers" target="_blank">View on GitHub ↗</a>
+    </div>
+
+    <div class="proj-card featured">
+      <div class="proj-num">02 · Featured</div>
       <div class="proj-title">🔌 Custom UART Bootloader — STM32F407VG</div>
       <p class="proj-desc">A production-style bootloader built without vendor middleware. This is the exact mechanism behind safe OTA and field-update systems in production embedded products.</p>
       <ul class="proj-bullets">
@@ -397,7 +418,7 @@
     </div>
 
     <div class="proj-card">
-      <div class="proj-num">02</div>
+      <div class="proj-num">03</div>
       <div class="proj-title">⏱️ Bare-Metal Task Scheduler</div>
       <p class="proj-desc">A cooperative/round-robin task scheduler on STM32F407VG — zero HAL, zero IDE. Built entirely from the command line to prove the internals, not just use them.</p>
       <ul class="proj-bullets">
@@ -414,7 +435,7 @@
     </div>
 
     <div class="proj-card">
-      <div class="proj-num">03</div>
+      <div class="proj-num">04</div>
       <div class="proj-title">🚗 Real-Time Vehicle DAQ — FreeRTOS</div>
       <p class="proj-desc">Multi-sensor vehicle monitoring with concurrent SPI, I2C, and UART data acquisition on ARM7 LPC2129.</p>
       <ul class="proj-bullets">
@@ -430,7 +451,7 @@
     </div>
 
     <div class="proj-card">
-      <div class="proj-num">04</div>
+      <div class="proj-num">05</div>
       <div class="proj-title">➕ 32-bit Hybrid Adder — VLSI</div>
       <p class="proj-desc">Combined Ling and Ripple Carry adder architecture for optimized speed/area trade-off, designed in Cadence Virtuoso.</p>
       <div class="proj-tech">
