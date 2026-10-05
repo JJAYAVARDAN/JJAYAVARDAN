@@ -130,8 +130,8 @@ Custom adder combining Ling and Ripple Carry logic for a speed/area trade-off, d
 
 | Role | Company | Focus |
 |---|---|---|
-| Associate Software Engineer (`[Mon YYYY]` – Present) | Harman International | Bluetooth middleware and controller support: AOSP stack, HCI/Ellisys analysis, firmware loading via UART, RCA, PTS |
-| Bluetooth Developer Intern (Jan 2026 – `[Mon YYYY]`) | Harman International | Android BT stack — HFP, A2DP, MAP, PBAP; PTS certification |
+| Associate Software Engineer (`[05 oct 2026]` – Present) | Harman International | Bluetooth middleware and controller support: AOSP stack, HCI/Ellisys analysis, firmware loading via UART, RCA, PTS |
+| Bluetooth Developer Intern (Jan 2026 – `[sept 2026]`) | Harman International | Android BT stack — HFP, A2DP, MAP, PBAP; PTS certification |
 | Embedded Software Trainee | Vector India | Interrupt-driven drivers (SPI/I2C/UART/CAN), FreeRTOS, Linux |
 | ARM Cortex-M4 Bare-Metal Program | Argyan Tech | Cortex-M4 architecture, custom scheduler, AAPCS |
 | PIC Microcontroller Course | Argyan Tech | Register-level Embedded C on PIC16F877A |
